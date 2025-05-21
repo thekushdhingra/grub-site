@@ -9,3 +9,10 @@ fetch("https://history.muffinlabs.com/date")
       </div>`;
     });
   });
+setInterval(() => {
+  const d = Date.now(),
+    r = 864e5 - (d % 864e5);
+  document.getElementById("clock").innerHTML = `${Math.floor(
+    r / 36e5
+  )}:${Math.floor((r % 36e5) / 6e4)}:${Math.floor((r % 6e4) / 1e3)}`;
+}, 1000);
