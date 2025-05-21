@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kush's Time Machine</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      a {
+        @apply text-blue-300 hover:text-blue-200 transition-colors duration-300;
+      }
+      body {
+        background: url("https://images.unsplash.com/photo-1563268381-06ddf2b1f46d?q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      }
+    </style>
+  </head>
+  <body
+    class="text-white font-sans flex flex-col min-h-screen bg-cover bg-center bg-no-repeat"
+  >
+    <nav
+      class="w-full bg-[#0003] fixed top-0 left-0 text-white flex justify-center items-center px-6 py-4 backdrop-blur-sm border-b border-white/10 shadow-lg z-10"
+    >
+      <h1 class="text-2xl font-mono">Kush's Time Machine</h1>
+    </nav>
+
+    <h2
+      class="text-white text-4xl font-semibold mt-10 text-center drop-shadow-md mt-24"
+    >
+      What Happened on This Day?
+    </h2>
+
+    <div
+      id="events-list"
+      class="flex flex-row flex-wrap items-center justify-center w-[90%] max-w-screen-lg mx-auto py-8 gap-4"
+    ></div>
+
+    <footer
+      class="w-full mt-auto bg-[#0003] text-center py-4 text-white/80 backdrop-blur-md flex flex-col items-center gap-2 shadow-lg border-t border-white/10"
+    >
+      <p class="text-white">
+        Made with ❤️ by Kush and powered by MuffinLabs History API
+      </p>
+      <div class="social-icons flex gap-4">
+        <a
+          href="https://github.com/thekushdhingra"
+          target="_blank"
+          aria-label="GitHub"
+          class="text-white hover:text-blue-400 transition"
+        >
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+            <path
+              d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.94.58.1.79-.25.79-.56v-2.1c-3.2.69-3.87-1.54-3.87-1.54-.52-1.3-1.27-1.64-1.27-1.64-1.04-.7.08-.68.08-.68 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.64 0-1.25.44-2.27 1.17-3.07-.12-.29-.51-1.46.11-3.06 0 0 .97-.31 3.18 1.17A11.1 11.1 0 0 1 12 6.8c.98.01 1.97.13 2.89.38 2.2-1.48 3.17-1.17 3.17-1.17.63 1.6.24 2.77.12 3.06.73.8 1.16 1.82 1.16 3.07 0 4.38-2.69 5.34-5.25 5.63.42.36.77 1.08.77 2.17v3.22c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://linkedin.com/in/thekushdhingra"
+          target="_blank"
+          aria-label="LinkedIn"
+          class="text-white hover:text-blue-400 transition"
+        >
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+            <path
+              d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 8.98h3.96v12.02H3zM9 8.98h3.78v1.63h.05c.53-.95 1.84-1.95 3.78-1.95 4.04 0 4.79 2.66 4.79 6.12v6.22h-3.96v-5.51c0-1.31-.02-3-1.83-3s-2.11 1.43-2.11 2.9v5.61H9z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://youtube.com/@thekushdhingra"
+          target="_blank"
+          aria-label="YouTube"
+          class="text-white hover:text-blue-400 transition"
+        >
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+            <path
+              d="M23.5 6.2s-.2-1.6-.8-2.3a3 3 0 0 0-2.3-.8C17.2 3 12 3 12 3s-5.2 0-8.4.1a3 3 0 0 0-2.3.8C.6 4.6.5 6.2.5 6.2S0 8.1 0 10v4c0 1.9.5 3.8.5 3.8s.2 1.6.8 2.3a3 3 0 0 0 2.3.8C6.8 21 12 21 12 21s5.2 0 8.4-.1a3 3 0 0 0 2.3-.8c.6-.7.8-2.3.8-2.3s.5-1.9.5-3.8v-4c0-1.9-.5-3.8-.5-3.8zM9.8 15.4V8.6l6.4 3.4-6.4 3.4z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://instagram.com/thekushdhingra"
+          target="_blank"
+          aria-label="Instagram"
+          class="text-white hover:text-blue-400 transition"
+        >
+          <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+            <path
+              d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3.2a5.8 5.8 0 1 0 0 11.6 5.8 5.8 0 0 0 0-11.6zm0 2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6zM18 5.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+            />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js" />
+  </body>
+</html>
